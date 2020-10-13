@@ -5,6 +5,7 @@
 
 .DS_Store
 .idea
+dist
 
 # User-specific files
 *.rsuser

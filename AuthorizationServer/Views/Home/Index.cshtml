@@ -1,0 +1,45 @@
+﻿@using Microsoft.AspNetCore.Authentication
+
+@if (User.Identity.IsAuthenticated)
+{
+    <div class="alert alert-secondary">
+        <p>You are signed in as</p>
+        
+        <h2>@User.Identity.Name</h2>
+        <hr/>
+        <h5>Claims</h5>
+
+        <dl>
+            @foreach (var claim in User.Claims)
+            {
+                <dt>@claim.Type</dt>
+                <dd>@claim.Value</dd>
+            }
+        </dl>
+        <hr/>
+
+        <h5>Properties</h5>
+
+        <dl>
+            @foreach (var prop in (await Context.AuthenticateAsync()).Properties.Items)
+            {
+                <dt>@prop.Key</dt>
+                <dd>@prop.Value</dd>
+            }
+        </dl>
+        <hr/>
+        <p><a class="btn btn-dark" asp-controller="Account" asp-action="Logout">Sign out</a></p>
+
+    </div>
+    
+}
+
+@if (!User.Identity.IsAuthenticated)
+{
+    <div class="alert alert-secondary">
+        <p>You are not signed in</p>
+        <p><a class="btn btn-sm btn-dark" asp-controller="Account" asp-action="Login">Sign in</a></p>
+    </div>
+}
+
+
