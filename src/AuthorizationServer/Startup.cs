@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -7,25 +8,18 @@ namespace AuthorizationServer
 {
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().AddMvcOptions(options =>
-            {
-                options.EnableEndpointRouting = false;
-            });
+            services.AddControllersWithViews();
             
-            services.AddAuthentication("Cookies")
-                .AddCookie("Cookies", options =>
+            // https://docs.microsoft.com/en-us/aspnet/core/security/authentication/?view=aspnetcore-3.1
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
                 {
                     options.LoginPath = "/account/login";
-                    options.AccessDeniedPath = "/account/denied";
                 });
-
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

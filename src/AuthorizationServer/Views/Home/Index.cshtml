@@ -2,7 +2,7 @@
 
 @if (User.Identity.IsAuthenticated)
 {
-    <div class="alert alert-secondary">
+    <div>
         <p>You are signed in as</p>
         
         <h2>@User.Identity.Name</h2>
@@ -36,7 +36,7 @@
 
 @if (!User.Identity.IsAuthenticated)
 {
-    <div class="alert alert-secondary">
+    <div>
         <p>You are not signed in</p>
         <p><a class="btn btn-sm btn-dark" asp-controller="Account" asp-action="Login">Sign in</a></p>
     </div>
