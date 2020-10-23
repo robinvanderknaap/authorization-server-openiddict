@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
- namespace AuthorizationServer.Controllers
+namespace AuthorizationServer.Controllers
 {
     public class HomeController : Controller
     {

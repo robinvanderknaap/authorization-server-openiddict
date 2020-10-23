@@ -12,7 +12,6 @@ namespace AuthorizationServer
         {
             services.AddControllersWithViews();
             
-            // https://docs.microsoft.com/en-us/aspnet/core/security/authentication/?view=aspnetcore-3.1
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
                 {
@@ -26,16 +25,15 @@ namespace AuthorizationServer
             {
                 app.UseDeveloperExceptionPage();
             }
-            
-            app.UseStaticFiles();
 
+            app.UseStaticFiles();
+            
             app.UseRouting();
 
             app.UseAuthentication();
-            
+
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
                 endpoints.MapDefaultControllerRoute();
             });
         }
