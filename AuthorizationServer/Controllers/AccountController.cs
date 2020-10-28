@@ -30,7 +30,7 @@ namespace AuthorizationServer.Controllers
             {
                 var claims = new List<Claim>
                 {
-                    new Claim(ClaimTypes.Name, model.Email)
+                    new Claim(ClaimTypes.Name, model.Username)
                 };
                 
                 var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
