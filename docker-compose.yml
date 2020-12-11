@@ -1,7 +1,0 @@
-version: '3.5'
-
-services:
-  postgres:
-    image: postgres:10.4
-    ports:
-      - "32432:5432"
