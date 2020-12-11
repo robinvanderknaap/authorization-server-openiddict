@@ -8,3 +8,7 @@ Authorization Server implemented with [OpenIddict 3](https://github.com/openiddi
 Open up a terminal in the root folder
 
     dotnet run --project AuthorizationServer
+
+Visit [https://localhost:5001](https://localhost:5001). In case of certificate errors run the following command:
+
+    dotnet dev-certs https --trust
