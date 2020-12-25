@@ -1,6 +1,8 @@
 # Authorization Server: OpenIddict
 Authorization Server implemented with [OpenIddict 3](https://github.com/openiddict/openiddict-core).
 
+This repository is part of a blog series: [Setting up an authorization server with OpenIddict](https://dev.to/robinvanderknaap/setting-up-an-authorization-server-with-openiddict-part-i-introduction-4jid).
+
 ## Prerequisites
 - [.NET 5](https://dotnet.microsoft.com/)
 
