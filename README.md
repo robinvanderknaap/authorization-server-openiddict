@@ -4,7 +4,7 @@ Authorization Server implemented with [OpenIddict 3](https://github.com/openiddi
 This repository is part of a blog series: [Setting up an authorization server with OpenIddict](https://dev.to/robinvanderknaap/setting-up-an-authorization-server-with-openiddict-part-i-introduction-4jid).
 
 ## Prerequisites
-- [.NET 5](https://dotnet.microsoft.com/)
+- [.NET 6](https://dotnet.microsoft.com/)
 
 ## Getting started
 Open up a terminal in the root folder
