@@ -19,7 +19,17 @@ namespace AuthorizationServer.Controllers
             return View();
         }
 
-        [HttpPost]
+		[HttpGet]
+		[AllowAnonymous]
+		public IActionResult LoginEntra(string returnUrl = null)
+		{
+			ViewData["ReturnUrl"] = returnUrl;
+
+			return Challenge("Entra");
+			//OpenIddict will use the Challenge result to talk to the configured provider automatically.
+		}
+
+		[HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model)
